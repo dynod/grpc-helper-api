@@ -7,14 +7,27 @@ syntax = "proto3";
 Common result codes
 */
 enum ResultCode {
-    OK = 0;     // All good
-    ERROR = 1;  // Unspecified error
+    OK = 0;                         // All good
+    ERROR = 1;                      // Unspecified error
+    ARGS = 2;                       // Reserved for command-line arguments parsing
 
-    // RPC errors
-    ERROR_PORT_BUSY = 4;            // Server can't start because port is not available
-    ERROR_API_CLIENT_TOO_OLD = 5;   // Client API version is too old for this server
-    ERROR_API_SERVER_TOO_OLD = 6;   // Client API version is too recent for this server
-    ERROR_RPC = 7;                  // Inner RPC error
+    // RPC related errors
+    ERROR_PORT_BUSY = 10;           // Server can't start because port is not available
+    ERROR_API_CLIENT_TOO_OLD = 11;  // Client API version is too old for this server
+    ERROR_API_SERVER_TOO_OLD = 12;  // Client API version is too recent for this server
+    ERROR_RPC = 13;                 // Inner RPC error
+
+    // Parameters related errors
+    ERROR_PARAM_MISSING = 20;       // Some mandatory parameter is missing
+    ERROR_PARAM_INVALID = 21;       // Some parameter value is invalid
+
+    // Items related errors
+    ERROR_ITEM_UNKNOWN = 30;        // One of the required items is unknown
+
+    // ----------------------------
+    // -- End of common errors code
+    // ----------------------------
+    ERROR_CUSTOM = 100;             // All service specific errors shall be greater than this value
 }
 
 /*
@@ -30,3 +43,10 @@ message Result {
 Shared empty message (for operations without input parameters)
 */
 message Empty {}
+
+/*
+Shared filter message (for listing/getting operations able to return filtered result)
+*/
+message Filter {
+    repeated string names = 1;  // List of item names to be returned
+}

@@ -9,3 +9,7 @@ The [common.proto](protos/grpc_helper/api/common.proto) file provides reusable A
 ## Info API
 
 This API defines an [info service](doc/info.md) that can be used to fetch services/components information.
+
+## Config API
+
+This API defines a [config service](doc/config.md) that handles configuration items.
