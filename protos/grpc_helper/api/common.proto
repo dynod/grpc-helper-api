@@ -24,6 +24,9 @@ enum ResultCode {
     // Items related errors
     ERROR_ITEM_UNKNOWN = 30;        // One of the required items is unknown
 
+    // Data model related errors
+    ERROR_MODEL_INVALID = 40;       // Data model structure is invalid
+
     // ----------------------------
     // -- End of common errors code
     // ----------------------------
