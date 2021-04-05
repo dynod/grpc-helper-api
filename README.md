@@ -13,3 +13,7 @@ This API defines an [info service](doc/info.md) that can be used to fetch servic
 ## Config API
 
 This API defines a [config service](doc/config.md) that handles configuration items.
+
+## Logger API
+
+This API defines a [logger service](doc/logger.md) that handles loggers configuration.
