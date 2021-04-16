@@ -56,6 +56,8 @@ Otherwise, possible error codes are:
 Update configuration items, according to the provided **`ConfigUpdate`** message (holding a list of **`name`** + **`value`** strings).
 The operation is atomic and will be applied only if all required updates are valid (i.e. don't raise an error).
 
+The updated configuration is persisted and will be reloaded when the server restarts.
+
 #### *Return*
 
 On success, returns a list of updated configuration items with their new values, in a **`ConfigStatus`** message.
@@ -77,6 +79,8 @@ Otherwise, possible error codes are:
 #### *Behavior*
 
 Reset configuration items to their default values, according to the provided **`Filter`**
+
+The updated configuration is persisted and will be reloaded when the server restarts.
 
 #### *Return*
 

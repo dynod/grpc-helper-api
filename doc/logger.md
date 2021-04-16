@@ -7,7 +7,8 @@ The logger service (defined in [logger.proto](../protos/grpc_helper/api/logger.p
 ## Logger configuration
 
 A logger configuration is defined with the following attributes:
-* **`name`**: a unique name string identifying the logger
+* **`name`**: a unique name string identifying the logger.
+  *__Note:__* an empty (**`""`**) string identifies the **root** logger (i.e. default level for all loggers)
 * **`enabled`**: a boolean flag stating if the logger is enabled (i.e. actively emitting logs) or not
 * **`level`**: the enabled level for this logger (e.g. all logs emitted with a level lower than the enabled one will be filtered)
 
@@ -41,6 +42,8 @@ Otherwise, possible error codes are:
 Update logger configurations, according to the provided **`LoggerUpdate`** message.
 The operation is atomic and will be applied only if all required updates are valid (i.e. don't raise an error).
 
+The updated configuration is persisted and will be reloaded when the server restarts.
+
 #### *Return*
 
 On success, returns a list of updated logger configurations with their new values, in a **`LoggerStatus`** message.
@@ -56,6 +59,8 @@ Otherwise, possible error codes are:
 #### *Behavior*
 
 Reset logger configurations to their default values, according to the provided **`Filter`**
+
+The updated configuration is persisted and will be reloaded when the server restarts.
 
 #### *Return*
 
