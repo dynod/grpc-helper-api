@@ -23,6 +23,8 @@ enum ConfigValidator {
     CONFIG_VALID_CUSTOM = 1;    // Custom validation
     CONFIG_VALID_INT = 2;       // Any integer
     CONFIG_VALID_POS_INT = 3;   // Strictly positive integer
+    CONFIG_VALID_FLOAT = 4;     // Any float
+    CONFIG_VALID_POS_FLOAT = 5; // Strictly positive float
 }
 
 // Configuration item
