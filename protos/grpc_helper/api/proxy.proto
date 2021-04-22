@@ -1,0 +1,40 @@
+/*
+Proxy registration service handling
+*/
+syntax = "proto3";
+import "grpc_helper/api/common.proto";
+
+/*
+API versions:
+When connecting, the client must check versions with the following rules:
+ - if its current version is greater than the server current one, the server is "too old" for that client
+ - if its current version is lower than the server minimum one, that client is "too old" for the server
+*/
+enum ProxyApiVersion {
+    option allow_alias = true;
+    PROXY_API_UNKNOWN = 0;
+    PROXY_API_SUPPORTED = 1;   // Minimum supported version for clients
+    PROXY_API_CURRENT = 1;     // Current version
+}
+
+// Proxy parameters message
+message ProxyParams {
+    repeated string names = 1;  // Service names to be registered in proxy
+    string host = 2;            // Host to be used to forward service calls; if empty, will use rpc-proxy-host config item
+    uint32 port = 3;            // Port to be used to forward service calls
+}
+
+// Proxy status message
+message ProxyStatus {
+    Result r = 1;                       // Operation result
+    repeated ProxyParams items = 2;     // Proxy parameters
+}
+
+// Proxy service
+service ProxyService {
+    // List known proxies for this server
+    rpc list(Empty) returns (ProxyStatus);
+
+    // Register proxy services
+    rpc register (ProxyParams) returns (ProxyStatus);
+}

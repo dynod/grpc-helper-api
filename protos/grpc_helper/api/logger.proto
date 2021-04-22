@@ -1,5 +1,5 @@
 /*
-Service loggers handling
+Loggers service handling
 */
 syntax = "proto3";
 import "grpc_helper/api/common.proto";

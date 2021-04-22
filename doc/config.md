@@ -26,6 +26,15 @@ Configuration items can be validated by one of the following validators:
 
 
 ---
+## Proxied services config
+
+If a server instance is handling proxied services, all config service operations will be propagated to the proxied servers.
+Behavior depend on used methods:
+* **`set`**/**`reset`** methods will apply the value to all servers knowing required config items
+* **`get`** method will success only if the got value is homogenous among all the proxied servers
+
+
+---
 ## Service methods
 
 ---
@@ -45,6 +54,7 @@ On success, returns the matching list of configuration items with their current 
 
 Otherwise, possible error codes are:
 * **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item.
+* **`ERROR_ITEM_CONFLICT`**: if current value is not the same among the different proxied servers (if proxy services are registered)
 
 ---
 ### set
@@ -57,6 +67,8 @@ Update configuration items, according to the provided **`ConfigUpdate`** message
 The operation is atomic and will be applied only if all required updates are valid (i.e. don't raise an error).
 
 The updated configuration is persisted and will be reloaded when the server restarts.
+
+**Note:** if proxy services are registered, config is updated on all proxied servers knowing the updated item(s)
 
 #### *Return*
 
@@ -81,6 +93,8 @@ Otherwise, possible error codes are:
 Reset configuration items to their default values, according to the provided **`Filter`**
 
 The updated configuration is persisted and will be reloaded when the server restarts.
+
+**Note:** if proxy services are registered, config is reset on all proxied servers knowing the impacted item(s)
 
 #### *Return*
 

@@ -16,6 +16,7 @@ enum ResultCode {
     ERROR_API_CLIENT_TOO_OLD = 11;  // Client API version is too old for this server
     ERROR_API_SERVER_TOO_OLD = 12;  // Client API version is too recent for this server
     ERROR_RPC = 13;                 // Inner RPC error
+    ERROR_PROXY_UNREGISTERED = 14;  // Service known to be served as a proxy one, but not registered yet
 
     // Parameters related errors
     ERROR_PARAM_MISSING = 20;       // Some mandatory parameter is missing
@@ -23,6 +24,7 @@ enum ResultCode {
 
     // Items related errors
     ERROR_ITEM_UNKNOWN = 30;        // One of the required items is unknown
+    ERROR_ITEM_CONFLICT = 31;       // Some conflict is detected between several items
 
     // Data model related errors
     ERROR_MODEL_INVALID = 40;       // Data model structure is invalid

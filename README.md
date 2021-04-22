@@ -17,3 +17,7 @@ This API defines a [config service](doc/config.md) that handles configuration it
 ## Logger API
 
 This API defines a [logger service](doc/logger.md) that handles loggers configuration.
+
+## Proxy API
+
+This API defines a [proxy service](doc/proxy.md) that handles services proxy registration.
