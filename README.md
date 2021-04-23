@@ -6,9 +6,9 @@ Shared API files for [GRPC helpers](https://github.com/dynod/grpc-helper)
 
 The [common.proto](protos/grpc_helper/api/common.proto) file provides reusable API elements for other services (error codes, return status, etc)
 
-## Info API
+## Server handling API
 
-This API defines an [info service](doc/info.md) that can be used to fetch services/components information.
+This API defines a [server handling service](doc/server.md) that can be used to fetch services/components information, and control global server behaviors.
 
 ## Config API
 
@@ -17,7 +17,3 @@ This API defines a [config service](doc/config.md) that handles configuration it
 ## Logger API
 
 This API defines a [logger service](doc/logger.md) that handles loggers configuration.
-
-## Proxy API
-
-This API defines a [proxy service](doc/proxy.md) that handles services proxy registration.
