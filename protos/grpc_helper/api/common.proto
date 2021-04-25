@@ -45,6 +45,13 @@ message Result {
 }
 
 /*
+Simple return message, including just a Result
+*/
+message ResultStatus {
+    Result r = 1;   // Operation result
+}
+
+/*
 Shared empty message (for operations without input parameters)
 */
 message Empty {}

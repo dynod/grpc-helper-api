@@ -53,11 +53,11 @@ service RpcServerService {
     rpc info (Filter) returns (MultiServiceInfo);
 
     // Graceful shutdown request
-    rpc shutdown (ShutdownRequest) returns (Result);
+    rpc shutdown (ShutdownRequest) returns (ResultStatus);
 
     // Register proxy services
-    rpc proxy_register (ProxyRegisterRequest) returns (Result);
+    rpc proxy_register (ProxyRegisterRequest) returns (ResultStatus);
 
     // Forget previously registered proxy services
-    rpc proxy_forget (Filter) returns (Result);
+    rpc proxy_forget (Filter) returns (ResultStatus);
 }
