@@ -15,7 +15,7 @@ List known available services information, according to the provided **`Filter`*
 * otherwise, return all the items exactly matching with the filter names
 
 #### *Return*
-On success, a **`MultiServiceInfo`** message is returned, including information for each available service:
+On success, a **`MultiServiceInfo`** message is returned, including information for each available service (or specified ones if **`Filter`** request is non-empty):
 * "module.service" name and version
 * current and supported API version
 * additional information if the service is a proxied one
@@ -58,7 +58,7 @@ In the meantime, service calls to these pre-declared services will answer an **`
 On success, the registration is persisted, and all service calls will be forwarded as configured.
 
 Otherwise, possible error codes are:
-* **`ERROR_PARAM_MISSING`**: if one the provided **`port`** or **`names`** input fields is empty
+* **`ERROR_PARAM_MISSING`**: if one the provided **`port`**, **`version`** or **`names`** input fields is empty
 * **`ERROR_ITEM_UNKNOWN`**: if any of the required services is unknown to the proxy server
 * **`ERROR_PARAM_INVALID`**: if any of the required services is not a proxy one
 
