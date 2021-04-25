@@ -59,7 +59,8 @@ On success, the registration is persisted, and all service calls will be forward
 
 Otherwise, possible error codes are:
 * **`ERROR_PARAM_MISSING`**: if one the provided **`port`** or **`names`** input fields is empty
-* **`ERROR_ITEM_UNKNOWN`**: if one of the required services is unknown to the proxy server
+* **`ERROR_ITEM_UNKNOWN`**: if any of the required services is unknown to the proxy server
+* **`ERROR_PARAM_INVALID`**: if any of the required services is not a proxy one
 
 
 ---
@@ -76,4 +77,5 @@ On success, the registration is removed, and all service calls won't be forwarde
 
 Otherwise, possible error codes are:
 * **`ERROR_PARAM_MISSING`**: if one the provided **`names`** input field is empty
-* **`ERROR_ITEM_UNKNOWN`**: if one of the required services is unknown to the proxy server
+* **`ERROR_ITEM_UNKNOWN`**: if any of the required services is unknown to the proxy server
+* **`ERROR_PARAM_INVALID`**: if any of the required services is not a proxy one
