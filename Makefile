@@ -5,6 +5,9 @@
 WORKSPACE_ROOT := $(CURDIR)/../..
 PROJECT_ROOT := $(CURDIR)
 
+# Proto package for code generation
+PROTO_PACKAGE := grpc_helper/api
+
 # Main makefile suite - defs
 include $(WORKSPACE_ROOT)/.workspace/main.mk
 
