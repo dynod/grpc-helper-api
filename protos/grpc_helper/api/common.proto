@@ -29,6 +29,9 @@ enum ResultCode {
     // Data model related errors
     ERROR_MODEL_INVALID = 40;       // Data model structure is invalid
 
+    // Internal requests related errors
+    ERROR_REQUEST_FAILED = 50;      // Internal request performed during operation has failed
+
     // ----------------------------
     // -- End of common errors code
     // ----------------------------
