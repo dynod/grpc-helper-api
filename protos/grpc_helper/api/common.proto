@@ -64,4 +64,5 @@ Shared filter message (for listing/getting operations able to return filtered re
 */
 message Filter {
     repeated string names = 1;  // List of item names to be returned
+    bool ignore_unknown = 2;    // If true, operation shell not return any error if some of the required names are unknown
 }

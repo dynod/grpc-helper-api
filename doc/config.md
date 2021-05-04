@@ -53,7 +53,7 @@ Get configuration items, according to the provided **`Filter`**:
 On success, returns the matching list of configuration items with their current value, in a **`ConfigStatus`** message.
 
 Otherwise, possible error codes are:
-* **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item.
+* **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item (and filter **`ignore_unknown`** field is **`false`**).
 * **`ERROR_ITEM_CONFLICT`**: if current value is not the same among the different proxied servers (if proxy services are registered)
 
 ---
@@ -101,5 +101,6 @@ The updated configuration is persisted and will be reloaded when the server rest
 On success, returns the list of configuration items that have been reset to their default values, in a **`ConfigStatus`** message.
 
 Otherwise, possible error codes are:
-* **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item.
+* **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item
+  (Note that the filter **`ignore_unknown`** field is not taken into account).
 * **`ERROR_PARAM_MISSING`**: if the **`Filter`** message list is empty
