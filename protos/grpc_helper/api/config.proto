@@ -52,6 +52,7 @@ message ConfigItemUpdate {
 // Configuration update request
 message ConfigUpdate {
     repeated ConfigItemUpdate items = 1;    // Items to be updated
+    bool ignore_unknown = 2;                // If true, operation shell not return any error if some of the required names are unknown
 }
 
 // Config service
