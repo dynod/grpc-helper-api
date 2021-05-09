@@ -11,7 +11,6 @@ When connecting, the client must check versions with the following rules:
  - if its current version is lower than the server minimum one, that client is "too old" for the server
 */
 enum ConfigApiVersion {
-    option allow_alias = true;
     CONFIG_API_UNKNOWN = 0;
     CONFIG_API_SUPPORTED = 1; // Minimum supported version for clients
     CONFIG_API_CURRENT = 2;   // Current version
