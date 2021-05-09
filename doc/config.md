@@ -75,7 +75,7 @@ The updated configuration is persisted and will be reloaded when the server rest
 On success, returns a list of updated configuration items with their new values, in a **`ConfigStatus`** message.
 
 Otherwise, possible error codes are:
-* **`ERROR_ITEM_UNKNOWN`**: if at least one of the required item names doesn't match with a known configuration item.
+* **`ERROR_ITEM_UNKNOWN`**: if at least one of the required item names doesn't match with a known configuration item (and request **`ignore_unknown`** field is **`false`**).
 * **`ERROR_PARAM_MISSING`**: if
   * either the **`ConfigUpdate`** message list is empty
   * or one of the updated item name is empty
@@ -101,6 +101,5 @@ The updated configuration is persisted and will be reloaded when the server rest
 On success, returns the list of configuration items that have been reset to their default values, in a **`ConfigStatus`** message.
 
 Otherwise, possible error codes are:
-* **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item
-  (Note that the filter **`ignore_unknown`** field is not taken into account).
+* **`ERROR_ITEM_UNKNOWN`**: if at least one of the filter names doesn't match with a known configuration item (and filter **`ignore_unknown`** field is **`false`**).
 * **`ERROR_PARAM_MISSING`**: if the **`Filter`** message list is empty
