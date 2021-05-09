@@ -14,7 +14,7 @@ enum ConfigApiVersion {
     option allow_alias = true;
     CONFIG_API_UNKNOWN = 0;
     CONFIG_API_SUPPORTED = 1; // Minimum supported version for clients
-    CONFIG_API_CURRENT = 1;   // Current version
+    CONFIG_API_CURRENT = 2;   // Current version
 }
 
 // Configuration item validators
