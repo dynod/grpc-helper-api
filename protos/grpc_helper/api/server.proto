@@ -4,6 +4,10 @@ Server handling service
 syntax = "proto3";
 import "grpc_helper/api/common.proto";
 
+// Some Java options
+option java_multiple_files = true;
+option java_package = "grpc_helper.api";
+
 /*
 API versions:
 When connecting, the client must check versions with the following rules:

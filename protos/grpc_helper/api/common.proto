@@ -3,6 +3,10 @@ Common API elements for GRPC helper interfaces
 */
 syntax = "proto3";
 
+// Some Java options
+option java_multiple_files = true;
+option java_package = "grpc_helper.api";
+
 /*
 Common result codes
 */
