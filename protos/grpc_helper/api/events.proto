@@ -12,9 +12,10 @@ option java_package = "grpc_helper.api";
 API versions
 */
 enum EventApiVersion {
+    option allow_alias = true;
     EVENT_API_UNKNOWN = 0;
     EVENT_API_SUPPORTED = 1;    // Minimum supported version for clients
-    EVENT_API_CURRENT = 2;      // Current version
+    EVENT_API_CURRENT = 1;      // Current version
 }
 
 // Event property
