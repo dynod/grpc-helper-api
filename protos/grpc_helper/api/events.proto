@@ -31,9 +31,9 @@ message Event {
 
 // Event status
 message EventStatus {
-    Result r = 1;               // Operation result
-    repeated Event events = 2;  // Received events
-    uint32 client_id = 3;       // Client ID (to be used to interrupt listening process)
+    Result r = 1;           // Operation result
+    Event event = 2;        // Received event
+    uint32 client_id = 3;   // Client ID (to be used to interrupt listening process)
 }
 
 // Event listening interrupt request
