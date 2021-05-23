@@ -14,9 +14,7 @@ An event is defined with the following attributes:
 ---
 ## Proxied services events
 
-If a server instance registers in a proxy server, this proxy will listen to all of this instance events in order to notify its own listeners.
-In other words, the proxied server doesn't have to worry about sending events to other servers that are also registered in the proxy: clients
-just need to listen to the proxy events to get them all.
+By convention, proxied managers shall both listen and send events from/to the proxy server. Proxied servers shouldn't be started with the enabled events service.
 
 
 ---
@@ -39,7 +37,9 @@ Listen to all events matching the provided **`Filter`**:
 Streams out endlessly all received events from the **`send`** method through **`EventStatus`** messages.
 These messages contain a **`client_id`** the has to be used if at any time the client decides to interrupt the listening process.
 
-**Note:** any running listening process will be interrupted when the events service is shutdown. In this case this method will return a 
+**Note 1:** a first status will always be immediately streamed out with an empty event name, to let the client know its **`client_id`** even if no event was received yet.
+
+**Note 2:** any running listening process will be interrupted when the events service is shutdown. In this case this method will return a 
 **`ERROR_STREAM_SHUTDOWN`** error code (that may be used be client to resume streaming ASAP)
 
 Otherwise, possible error codes are:
