@@ -69,6 +69,7 @@ On success, the identified listening process is stopped.
 
 Otherwise, possible error codes are:
 * **`ERROR_ITEM_UNKNOWN`**: provided **`client_id`** is unknown to the events service.
+* **`ERROR_STATE_UNEXPECTED`**: events queue identified with provided **`client_id`** is already interrupted
 
 
 ---
