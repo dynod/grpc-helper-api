@@ -2,11 +2,11 @@
 Configuration service handling
 */
 syntax = "proto3";
-import "grpc_helper/api/common.proto";
+import "grpc_helper_api/common.proto";
 
 // Some Java options
 option java_multiple_files = true;
-option java_package = "grpc_helper.api";
+option java_package = "grpc_helper_api";
 
 /*
 API versions:
