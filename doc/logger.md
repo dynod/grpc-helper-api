@@ -1,6 +1,6 @@
 # Logger service
 
-The logger service (defined in [logger.proto](../protos/grpc_helper/api/logger.proto)) allows to handle (get/set/reset) loggers configuration.
+The logger service (defined in [logger.proto](../protos/grpc_helper_api/logger.proto)) allows to handle (get/set/reset) loggers configuration.
 
 
 ---

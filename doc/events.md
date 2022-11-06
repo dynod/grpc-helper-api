@@ -1,6 +1,6 @@
 # Events service
 
-The events service (defined in [events.proto](../protos/grpc_helper/api/events.proto)) allows to handle a generic events system.
+The events service (defined in [events.proto](../protos/grpc_helper_api/events.proto)) allows to handle a generic events system.
 
 
 ---
