@@ -1,6 +1,6 @@
 # Server handling service
 
-The server handling service (defined in [server.proto](../protos/grpc_helper/api/server.proto)) allows to fetch information about available services for 
+The server handling service (defined in [server.proto](../protos/grpc_helper_api/server.proto)) allows to fetch information about available services for 
 the serving RPC server, and more generally to control the server behavior.
 
 

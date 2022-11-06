@@ -1,6 +1,6 @@
 # Config service
 
-The config service (defined in [config.proto](../protos/grpc_helper/api/config.proto)) allows to handle (get/set/reset) configuration items.
+The config service (defined in [config.proto](../protos/grpc_helper_api/config.proto)) allows to handle (get/set/reset) configuration items.
 
 
 ---
