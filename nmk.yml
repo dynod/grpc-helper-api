@@ -17,3 +17,6 @@ config:
     pythonSetupItems:
         metadata:
             description: API module for grpc_helper
+
+    # Issues repository
+    githubIssuesRepo: grpc-helper
